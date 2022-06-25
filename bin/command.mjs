@@ -14,6 +14,7 @@ const assertPath = async ({ path, pathString }) => {
     assert.equal(text, "hello\n");
     return { status: "pass", path, pathString };
   } catch (error) {
+    console.log(error);
     return { status: "fail", path, pathString };
   }
 }
