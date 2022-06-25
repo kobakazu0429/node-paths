@@ -3,8 +3,9 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url))
 // const __dirname = dirname(new URL(import.meta.url).pathname);
+// const __dirname = fileURLToPath(new URL(".", import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url));
 console.log("__dirname:", __dirname);
 
 const assertPath = async ({ path, pathString }) => {
@@ -190,6 +191,7 @@ const main = async () => {
   // console.log(results);
 
   console.log(results.filter(r => r.status === "pass").map(p => p.pathString));
+  console.log(results.filter(r => r.status === "fail").map(p => p.pathString));
 }
 
 main();
