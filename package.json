@@ -1,0 +1,11 @@
+{
+  "name": "node-paths",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/kobakazu0429/node-paths.git",
+  "author": "kobakazu0429 <kobakazu10@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node bin/command.mjs"
+  }
+}
