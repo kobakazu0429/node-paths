@@ -11,10 +11,10 @@ console.log("__dirname:", __dirname);
 const assertPath = async ({ path, pathString }) => {
   try {
     const text = await fs.readFile(path, "utf-8");
-    assert.equal(text, "hello\n");
+    assert.equal(text.trim(), "hello");
     return { status: "pass", path, pathString };
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return { status: "fail", path, pathString };
   }
 }
@@ -192,7 +192,7 @@ const main = async () => {
   // console.log(results);
 
   console.log(results.filter(r => r.status === "pass").map(p => p.pathString));
-  console.log(results.filter(r => r.status === "fail").map(p => p.pathString));
+  // console.log(results.filter(r => r.status === "fail").map(p => p.pathString));
 }
 
 main();
